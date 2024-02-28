@@ -1,16 +1,23 @@
-import Button from '@enact/sandstone/Button';
-import kind from '@enact/core/kind';
-import {Panel, Header} from '@enact/sandstone/Panels';
+import { Header } from "@enact/sandstone/Panels";
+import { TButton, TPanel } from "../components";
+import { useDispatch } from "react-redux";
+import { useCallback } from "react";
+import { addPanels } from "../features/panels/panelsSlice";
+import { panel_names } from "../utils/Config";
 
-const MainPanel = kind({
-	name: 'MainPanel',
+const MainPanel = () => {
+  const dispatch = useDispatch();
 
-	render: (props) => (
-		<Panel {...props}>
-			<Header title="Hello world!" />
-			<Button>Click me</Button>
-		</Panel>
-	)
-});
+  const onClickHandler = useCallback(() => {
+    dispatch(addPanels({ name: panel_names.TEST, panelInfo: {} }));
+  }, []);
+
+  return (
+    <TPanel>
+      <Header title="Hello world!" />
+      <TButton onClick={onClickHandler}>Click me</TButton>
+    </TPanel>
+  );
+};
 
 export default MainPanel;

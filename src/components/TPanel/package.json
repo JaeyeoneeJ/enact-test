@@ -1,0 +1,6 @@
+{
+  "main": "TPanel.jsx",
+  "styles": [
+    "TPanel.module.less"
+  ]
+}

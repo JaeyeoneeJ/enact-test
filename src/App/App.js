@@ -1,26 +1,10 @@
-import kind from '@enact/core/kind';
-import ThemeDecorator from '@enact/sandstone/ThemeDecorator';
-import Panels from '@enact/sandstone/Panels';
+import ThemeDecorator from "@enact/sandstone/ThemeDecorator";
+import MainView from "../views/MainView/MainView";
 
-import MainPanel from '../views/MainPanel';
+const AppBase = () => {
+  return <MainView />;
+};
 
-import './attachErrorHandler';
+const App = ThemeDecorator({ noAutoFocus: true }, AppBase);
 
-import css from './App.module.less';
-
-const App = kind({
-	name: 'App',
-
-	styles: {
-		css,
-		className: 'app'
-	},
-
-	render: (props) => (
-		<Panels {...props}>
-			<MainPanel />
-		</Panels>
-	)
-});
-
-export default ThemeDecorator(App);
+export default App;
