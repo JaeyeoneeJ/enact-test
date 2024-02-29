@@ -5,19 +5,19 @@ import { useSelector } from "react-redux";
 
 const MainView = () => {
   const Test1Panel = lazy(() =>
-    /* webpackChunkName: "TestPanel" */ import("../Test1Panel")
+    import(/* webpackChunkName: "Test1Panel" */ "../Test1Panel")
   );
   const Test2Panel = lazy(() =>
-    /* webpackChunkName: "TestPanel" */ import("../Test2Panel")
+    import(/* webpackChunkName: "Test2Panel" */ "../Test2Panel")
   );
   const Test3Panel = lazy(() =>
-    /* webpackChunkName: "TestPanel" */ import("../Test3Panel")
+    import(/* webpackChunkName: "Test3Panel" */ "../Test3Panel")
   );
   const Test4Panel = lazy(() =>
-    /* webpackChunkName: "TestPanel" */ import("../Test4Panel")
+    import(/* webpackChunkName: "Test4Panel" */ "../Test4Panel")
   );
   const Test5Panel = lazy(() =>
-    /* webpackChunkName: "TestPanel" */ import("../Test5Panel")
+    import(/* webpackChunkName: "Test5Panel" */ "../Test5Panel")
   );
   const panelMap = {
     [Config.panel_names.TEST1]: Test1Panel,
