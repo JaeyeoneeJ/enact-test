@@ -5,19 +5,19 @@ import { useCallback } from "react";
 import { addPanels } from "../features/panels/panelsSlice";
 import { panel_names } from "../utils/Config";
 
-const MainPanel = () => {
+const Test1Panel = () => {
   const dispatch = useDispatch();
 
   const onClickHandler = useCallback(() => {
-    dispatch(addPanels({ name: panel_names.TEST1, panelInfo: {} }));
+    dispatch(addPanels({ name: panel_names.TEST2, panelInfo: {} }));
   }, []);
 
   return (
     <TPanel>
-      <Header title="Hello world!" />
-      <TButton onClick={onClickHandler}>Click me</TButton>
+      <Header title="Test 1!" />
+      <TButton onClick={onClickHandler}>Test Button</TButton>
     </TPanel>
   );
 };
 
-export default MainPanel;
+export default Test1Panel;
