@@ -13,7 +13,9 @@
     "lint": "enact lint .",
     "license": "enact license",
     "test": "enact test",
-    "test-watch": "enact test --watch"
+    "test-watch": "enact test --watch",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build"
   },
   "license": "UNLICENSED",
   "private": true,
@@ -22,11 +24,12 @@
     "npm": ">=6.9.0"
   },
   "enact": {
-    "theme": "sandstone"
+    "theme": "sandstone",
+    "ri": {
+      "baseSize": 24
+    }
   },
-  "eslintConfig": {
-    "extends": "enact-proxy"
-  },
+  "eslintConfig": {},
   "eslintIgnore": [
     "node_modules/*",
     "build/*",
@@ -44,9 +47,29 @@
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-redux": "^9.1.0"
+    "react-redux": "^9.1.0",
+    "react-scripts": "5.0.1"
   },
   "devDependencies": {
-    "eslint-config-enact-proxy": "^1.0.7"
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "babel-eslint": "^10.1.0",
+    "customize-cra": "^1.0.0",
+    "customize-cra-less-loader": "^2.0.0",
+    "eslint-config-enact-proxy": "^1.0.7",
+    "postcss-preset-env": "^9.5.2",
+    "postcss-pxtorem": "^6.1.0",
+    "react-app-rewired": "^2.2.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
