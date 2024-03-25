@@ -1,4 +1,4 @@
-import React, { Suspense, lazy, useCallback, useState } from "react";
+import React, { Suspense, lazy, useCallback, useMemo } from "react";
 import * as Config from "../../utils/Config";
 import MainPanel from "../MainPanel";
 import { useSelector } from "react-redux";
@@ -30,6 +30,10 @@ const MainView = () => {
   const panels = useSelector((state) => state.panels.panels);
   console.log("jjy panels", panels);
 
+  const isOnTop = useMemo(() => {
+    return panels.length <= 0;
+  }, [panels.length]);
+
   const renderTopPanel = useCallback(() => {
     if (panels && panels.length > 0) {
       const panel = panels[panels.length - 1];
@@ -42,7 +46,7 @@ const MainView = () => {
 
   return (
     <>
-      <MainPanel />
+      <MainPanel isOnTop={isOnTop} />
       <Suspense fallback={<div>...loading</div>}>{renderTopPanel()}</Suspense>
     </>
   );
