@@ -56,6 +56,9 @@
     "customize-cra": "^1.0.0",
     "customize-cra-less-loader": "^2.0.0",
     "eslint-config-enact-proxy": "^1.0.7",
+    "less": "^4.2.0",
+    "less-loader": "^12.2.0",
+    "postcss-loader": "^8.1.1",
     "postcss-preset-env": "^9.5.2",
     "postcss-pxtorem": "^6.1.0",
     "react-app-rewired": "^2.2.1"
