@@ -52,6 +52,7 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@enact/dev-utils": "^6.0.3",
     "babel-eslint": "^10.1.0",
     "customize-cra": "^1.0.0",
     "customize-cra-less-loader": "^2.0.0",
