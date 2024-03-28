@@ -1,9 +1,19 @@
 const { override, adjustStyleLoaders } = require("customize-cra");
 const addLessLoader = require("customize-cra-less-loader");
 const postcssPresetEnv = require("postcss-preset-env");
+const { ILibPlugin } = require("@enact/dev-utils");
 
 const themeConfig = require("./package.json").enact;
 const baseSize = themeConfig?.ri?.baseSize || 24;
+
+const addILibPlugin = (config) => {
+  config.plugins.push(
+    new ILibPlugin({
+      publicPath: "/",
+    })
+  );
+  return config;
+};
 
 module.exports = override(
   addLessLoader({
@@ -33,5 +43,6 @@ module.exports = override(
         },
       });
     }
-  })
+  }),
+  addILibPlugin
 );
